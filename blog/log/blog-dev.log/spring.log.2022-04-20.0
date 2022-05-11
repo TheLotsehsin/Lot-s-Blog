@@ -1,0 +1,501 @@
+2022-04-20 19:19:55.016  INFO 10572 --- [restartedMain] com.lot.blog.BlogApplication             : Starting BlogApplication using Java 11.0.3 on DESKTOP-H8KV7I2 with PID 10572 (D:\Java文件\java框架\blog\target\classes started by 22709 in D:\Java文件\java框架\blog)
+2022-04-20 19:19:55.021 DEBUG 10572 --- [restartedMain] com.lot.blog.BlogApplication             : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-04-20 19:19:55.022  INFO 10572 --- [restartedMain] com.lot.blog.BlogApplication             : The following profiles are active: dev
+2022-04-20 19:19:55.089  INFO 10572 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-20 19:19:55.090  INFO 10572 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-20 19:19:56.710  INFO 10572 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-20 19:19:56.720  INFO 10572 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-20 19:19:56.721  INFO 10572 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-04-20 19:19:56.828  INFO 10572 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-20 19:19:56.829  INFO 10572 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1739 ms
+2022-04-20 19:19:57.781  INFO 10572 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-20 19:19:58.423  INFO 10572 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-20 19:19:58.468  INFO 10572 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-20 19:19:58.483  INFO 10572 --- [restartedMain] com.lot.blog.BlogApplication             : Started BlogApplication in 4.337 seconds (JVM running for 6.175)
+2022-04-20 19:20:18.896  INFO 10572 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-20 19:20:18.898  INFO 10572 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-20 19:20:18.902  INFO 10572 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2022-04-20 19:20:18.959  INFO 10572 --- [http-nio-8080-exec-1] com.lot.blog.aspect.LogAspect            : Request : {}RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.lot.blog.controller.IndexController,index', args=[1, {}]}
+2022-04-20 19:20:19.015  INFO 10572 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-20 19:20:19.412  INFO 10572 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-20 19:20:19.424 DEBUG 10572 --- [http-nio-8080-exec-1] c.l.b.d.B.getAllIndexPageBlog_COUNT      : ==>  Preparing: SELECT count(0) FROM `t_blog` b, `t_type` t, `t_user` u WHERE b.published = true AND b.type_id = t.id AND u.id = b.user_id
+2022-04-20 19:20:19.455 DEBUG 10572 --- [http-nio-8080-exec-1] c.l.b.d.B.getAllIndexPageBlog_COUNT      : ==> Parameters: 
+2022-04-20 19:20:19.493 DEBUG 10572 --- [http-nio-8080-exec-1] c.l.b.d.B.getAllIndexPageBlog_COUNT      : <==      Total: 1
+2022-04-20 19:20:19.500 DEBUG 10572 --- [http-nio-8080-exec-1] c.l.b.dao.BlogDao.getAllIndexPageBlog    : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.id typeId,t.name typeName,u.nickname, u.avatar from `t_blog` b, `t_type` t,`t_user` u where b.published = true and b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ?
+2022-04-20 19:20:19.502 DEBUG 10572 --- [http-nio-8080-exec-1] c.l.b.dao.BlogDao.getAllIndexPageBlog    : ==> Parameters: 5(Integer)
+2022-04-20 19:20:19.510 DEBUG 10572 --- [http-nio-8080-exec-1] c.l.b.dao.BlogDao.getAllIndexPageBlog    : <==      Total: 2
+2022-04-20 19:20:19.514 DEBUG 10572 --- [http-nio-8080-exec-1] com.lot.blog.dao.TypeDao.getIndexType    : ==>  Preparing: select t.id tid,t.name,b.id bid ,b.title from `t_type`t,`t_blog` b where b.published = true and t.id = b.type_id order by t.id desc limit 4
+2022-04-20 19:20:19.514 DEBUG 10572 --- [http-nio-8080-exec-1] com.lot.blog.dao.TypeDao.getIndexType    : ==> Parameters: 
+2022-04-20 19:20:19.518 DEBUG 10572 --- [http-nio-8080-exec-1] com.lot.blog.dao.TypeDao.getIndexType    : <==      Total: 2
+2022-04-20 19:20:19.520 DEBUG 10572 --- [http-nio-8080-exec-1] com.lot.blog.dao.TagDao.getIndexTag      : ==>  Preparing: select t.id tid,t.name,b.id bid,b.title from `t_tag` t,`t_blog` b,`t_blog_tag` bt where b.published = true and bt.blog_id = b.id and bt.tag_id = t.id order by tid desc limit 6
+2022-04-20 19:20:19.520 DEBUG 10572 --- [http-nio-8080-exec-1] com.lot.blog.dao.TagDao.getIndexTag      : ==> Parameters: 
+2022-04-20 19:20:19.530 DEBUG 10572 --- [http-nio-8080-exec-1] com.lot.blog.dao.TagDao.getIndexTag      : <==      Total: 2
+2022-04-20 19:20:19.531 DEBUG 10572 --- [http-nio-8080-exec-1] c.l.b.dao.BlogDao.getAllReCommendBlog    : ==>  Preparing: select * from `t_blog` b where b.recommend = true and b.published = true order by b.update_time desc limit 4
+2022-04-20 19:20:19.531 DEBUG 10572 --- [http-nio-8080-exec-1] c.l.b.dao.BlogDao.getAllReCommendBlog    : ==> Parameters: 
+2022-04-20 19:20:19.537 DEBUG 10572 --- [http-nio-8080-exec-1] c.l.b.dao.BlogDao.getAllReCommendBlog    : <==      Total: 2
+2022-04-20 19:20:19.539  INFO 10572 --- [http-nio-8080-exec-1] com.lot.blog.aspect.LogAspect            : Result : {}index
+2022-04-20 19:20:27.324  INFO 10572 --- [http-nio-8080-exec-8] com.lot.blog.aspect.LogAspect            : Request : {}RequestLog{url='http://localhost:8080/search', ip='0:0:0:0:0:0:0:1', classMethod='com.lot.blog.controller.IndexController,blog', args=[1, centOs, {}]}
+2022-04-20 19:20:27.365 DEBUG 10572 --- [http-nio-8080-exec-8] B.getIndexPageBlogByTitleOrContent_COUNT : ==>  Preparing: SELECT count(0) FROM `t_blog` b, `t_type` t, `t_user` u WHERE b.published = true AND b.type_id = t.id AND u.id = b.user_id AND (b.description LIKE ? OR b.title LIKE ? OR b.content LIKE ?)
+2022-04-20 19:20:27.367 DEBUG 10572 --- [http-nio-8080-exec-8] B.getIndexPageBlogByTitleOrContent_COUNT : ==> Parameters: %centOs%(String), %centOs%(String), %centOs%(String)
+2022-04-20 19:20:27.372 DEBUG 10572 --- [http-nio-8080-exec-8] B.getIndexPageBlogByTitleOrContent_COUNT : <==      Total: 1
+2022-04-20 19:20:27.372  INFO 10572 --- [http-nio-8080-exec-8] com.lot.blog.aspect.LogAspect            : Result : {}search
+2022-04-20 19:20:35.991  INFO 10572 --- [http-nio-8080-exec-6] com.lot.blog.aspect.LogAspect            : Request : {}RequestLog{url='http://localhost:8080/search', ip='0:0:0:0:0:0:0:1', classMethod='com.lot.blog.controller.IndexController,blog', args=[1, centos, {}]}
+2022-04-20 19:20:35.997 DEBUG 10572 --- [http-nio-8080-exec-6] B.getIndexPageBlogByTitleOrContent_COUNT : ==>  Preparing: SELECT count(0) FROM `t_blog` b, `t_type` t, `t_user` u WHERE b.published = true AND b.type_id = t.id AND u.id = b.user_id AND (b.description LIKE ? OR b.title LIKE ? OR b.content LIKE ?)
+2022-04-20 19:20:35.998 DEBUG 10572 --- [http-nio-8080-exec-6] B.getIndexPageBlogByTitleOrContent_COUNT : ==> Parameters: %centos%(String), %centos%(String), %centos%(String)
+2022-04-20 19:20:36.003 DEBUG 10572 --- [http-nio-8080-exec-6] B.getIndexPageBlogByTitleOrContent_COUNT : <==      Total: 1
+2022-04-20 19:20:36.004  INFO 10572 --- [http-nio-8080-exec-6] com.lot.blog.aspect.LogAspect            : Result : {}search
+2022-04-20 19:20:52.663  INFO 10572 --- [http-nio-8080-exec-5] com.lot.blog.aspect.LogAspect            : Request : {}RequestLog{url='http://localhost:8080/search', ip='0:0:0:0:0:0:0:1', classMethod='com.lot.blog.controller.IndexController,blog', args=[1, 哆啦, {}]}
+2022-04-20 19:20:52.669 DEBUG 10572 --- [http-nio-8080-exec-5] B.getIndexPageBlogByTitleOrContent_COUNT : ==>  Preparing: SELECT count(0) FROM `t_blog` b, `t_type` t, `t_user` u WHERE b.published = true AND b.type_id = t.id AND u.id = b.user_id AND (b.description LIKE ? OR b.title LIKE ? OR b.content LIKE ?)
+2022-04-20 19:20:52.671 DEBUG 10572 --- [http-nio-8080-exec-5] B.getIndexPageBlogByTitleOrContent_COUNT : ==> Parameters: %哆啦%(String), %哆啦%(String), %哆啦%(String)
+2022-04-20 19:20:52.675 DEBUG 10572 --- [http-nio-8080-exec-5] B.getIndexPageBlogByTitleOrContent_COUNT : <==      Total: 1
+2022-04-20 19:20:52.676 DEBUG 10572 --- [http-nio-8080-exec-5] l.b.d.B.getIndexPageBlogByTitleOrContent : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name,u.nickname, u.avatar from `t_blog` b, `t_type` t,`t_user` u where b.published = true and b.type_id = t.id and u.id = b.user_id and (b.description like ? or b.title like ? or b.content like ?) order by b.update_time desc LIMIT ?
+2022-04-20 19:20:52.677 DEBUG 10572 --- [http-nio-8080-exec-5] l.b.d.B.getIndexPageBlogByTitleOrContent : ==> Parameters: %哆啦%(String), %哆啦%(String), %哆啦%(String), 8(Integer)
+2022-04-20 19:20:52.679 DEBUG 10572 --- [http-nio-8080-exec-5] l.b.d.B.getIndexPageBlogByTitleOrContent : <==      Total: 1
+2022-04-20 19:20:52.680  INFO 10572 --- [http-nio-8080-exec-5] com.lot.blog.aspect.LogAspect            : Result : {}search
+2022-04-20 19:20:55.601 ERROR 10572 --- [http-nio-8080-exec-10] c.l.b.hander.ControllerExceptionHander   : Request URL:http://localhost:8080/search, Exception : {}
+
+org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'query' for method parameter type String is not present
+	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValueInternal(RequestParamMethodArgumentResolver.java:218)
+	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValue(RequestParamMethodArgumentResolver.java:193)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:114)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+2022-04-20 19:20:55.604  WARN 10572 --- [http-nio-8080-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'query' for method parameter type String is not present]
+2022-04-20 19:22:07.020  INFO 14352 --- [restartedMain] com.lot.blog.BlogApplication             : Starting BlogApplication using Java 11.0.3 on DESKTOP-H8KV7I2 with PID 14352 (D:\Java文件\java框架\blog\target\classes started by 22709 in D:\Java文件\java框架\blog)
+2022-04-20 19:22:07.022 DEBUG 14352 --- [restartedMain] com.lot.blog.BlogApplication             : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-04-20 19:22:07.022  INFO 14352 --- [restartedMain] com.lot.blog.BlogApplication             : The following profiles are active: dev
+2022-04-20 19:22:07.083  INFO 14352 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-20 19:22:07.083  INFO 14352 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-20 19:22:08.617  INFO 14352 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-20 19:22:08.627  INFO 14352 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-20 19:22:08.628  INFO 14352 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-04-20 19:22:08.738  INFO 14352 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-20 19:22:08.738  INFO 14352 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1654 ms
+2022-04-20 19:22:09.717  INFO 14352 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-20 19:22:10.242  INFO 14352 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-20 19:22:10.286  INFO 14352 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-20 19:22:10.300  INFO 14352 --- [restartedMain] com.lot.blog.BlogApplication             : Started BlogApplication in 3.974 seconds (JVM running for 6.562)
+2022-04-20 19:22:17.625  INFO 14352 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-20 19:22:17.626  INFO 14352 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-20 19:22:17.629  INFO 14352 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-04-20 19:22:17.675 ERROR 14352 --- [http-nio-8080-exec-1] c.l.b.hander.ControllerExceptionHander   : Request URL:http://localhost:8080/search, Exception : {}
+
+org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'query' for method parameter type String is not present
+	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValueInternal(RequestParamMethodArgumentResolver.java:218)
+	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValue(RequestParamMethodArgumentResolver.java:193)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:114)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+2022-04-20 19:22:17.681  WARN 14352 --- [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'query' for method parameter type String is not present]
+2022-04-20 19:22:23.747 ERROR 14352 --- [http-nio-8080-exec-4] c.l.b.hander.ControllerExceptionHander   : Request URL:http://localhost:8080/search, Exception : {}
+
+org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'query' for method parameter type String is not present
+	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValueInternal(RequestParamMethodArgumentResolver.java:218)
+	at org.springframework.web.method.annotation.RequestParamMethodArgumentResolver.handleMissingValue(RequestParamMethodArgumentResolver.java:193)
+	at org.springframework.web.method.annotation.AbstractNamedValueMethodArgumentResolver.resolveArgument(AbstractNamedValueMethodArgumentResolver.java:114)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+2022-04-20 19:22:23.749  WARN 14352 --- [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'query' for method parameter type String is not present]
+2022-04-20 19:25:26.808  INFO 9744 --- [restartedMain] com.lot.blog.BlogApplication             : Starting BlogApplication using Java 11.0.3 on DESKTOP-H8KV7I2 with PID 9744 (D:\Java文件\java框架\blog\target\classes started by 22709 in D:\Java文件\java框架\blog)
+2022-04-20 19:25:26.810 DEBUG 9744 --- [restartedMain] com.lot.blog.BlogApplication             : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-04-20 19:25:26.810  INFO 9744 --- [restartedMain] com.lot.blog.BlogApplication             : The following profiles are active: dev
+2022-04-20 19:25:26.883  INFO 9744 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-20 19:25:26.884  INFO 9744 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-20 19:25:29.875  INFO 9744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-20 19:25:29.887  INFO 9744 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-20 19:25:29.888  INFO 9744 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-04-20 19:25:30.019  INFO 9744 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-20 19:25:30.019  INFO 9744 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3134 ms
+2022-04-20 19:25:31.426  INFO 9744 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-20 19:25:32.413  INFO 9744 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-20 19:25:32.516  INFO 9744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-20 19:25:32.550  INFO 9744 --- [restartedMain] com.lot.blog.BlogApplication             : Started BlogApplication in 6.624 seconds (JVM running for 8.32)
+2022-04-20 19:25:34.121  INFO 9744 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-20 19:25:34.122  INFO 9744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-20 19:25:34.123  INFO 9744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-04-20 19:25:34.216  INFO 9744 --- [http-nio-8080-exec-1] com.lot.blog.aspect.LogAspect            : Request : {}RequestLog{url='http://localhost:8080/search', ip='0:0:0:0:0:0:0:1', classMethod='com.lot.blog.controller.IndexController,blog', args=[1, 哆啦, {}]}
+2022-04-20 19:25:34.376  INFO 9744 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-20 19:25:35.094  INFO 9744 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-20 19:25:35.119 DEBUG 9744 --- [http-nio-8080-exec-1] B.getIndexPageBlogByTitleOrContent_COUNT : ==>  Preparing: SELECT count(0) FROM `t_blog` b, `t_type` t, `t_user` u WHERE b.published = true AND b.type_id = t.id AND u.id = b.user_id AND (b.description LIKE ? OR b.title LIKE ? OR b.content LIKE ?)
+2022-04-20 19:25:35.177 DEBUG 9744 --- [http-nio-8080-exec-1] B.getIndexPageBlogByTitleOrContent_COUNT : ==> Parameters: %哆啦%(String), %哆啦%(String), %哆啦%(String)
+2022-04-20 19:25:35.244 DEBUG 9744 --- [http-nio-8080-exec-1] B.getIndexPageBlogByTitleOrContent_COUNT : <==      Total: 1
+2022-04-20 19:25:35.257 DEBUG 9744 --- [http-nio-8080-exec-1] l.b.d.B.getIndexPageBlogByTitleOrContent : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name,u.nickname, u.avatar from `t_blog` b, `t_type` t,`t_user` u where b.published = true and b.type_id = t.id and u.id = b.user_id and (b.description like ? or b.title like ? or b.content like ?) order by b.update_time desc LIMIT ?
+2022-04-20 19:25:35.260 DEBUG 9744 --- [http-nio-8080-exec-1] l.b.d.B.getIndexPageBlogByTitleOrContent : ==> Parameters: %哆啦%(String), %哆啦%(String), %哆啦%(String), 8(Integer)
+2022-04-20 19:25:35.276 DEBUG 9744 --- [http-nio-8080-exec-1] l.b.d.B.getIndexPageBlogByTitleOrContent : <==      Total: 1
+2022-04-20 19:25:35.289  INFO 9744 --- [http-nio-8080-exec-1] com.lot.blog.aspect.LogAspect            : Result : {}search
+2022-04-20 19:25:36.624 ERROR 9744 --- [http-nio-8080-exec-1] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-1] Exception processing template "search": Exception evaluating SpringEL expression: "/blog/{id}(id=${blog.id})" (template: "search" - line 82, col 53)
+
+org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "/blog/{id}(id=${blog.id})" (template: "search" - line 82, col 53)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:292)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.LinkExpression.executeLinkExpression(LinkExpression.java:264)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:85)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:367)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:221)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.CloseElementTag.beHandled(CloseElementTag.java:139)
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:661)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1401)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1145)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1084)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.springframework.expression.spel.SpelParseException: Expression [/blog/{id}(id=${blog.id})] @0: EL1070E: Problem parsing left operand
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.internalException(InternalSpelExpressionParser.java:1041)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.checkLeftOperand(InternalSpelExpressionParser.java:1030)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.checkOperands(InternalSpelExpressionParser.java:1024)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatProductExpression(InternalSpelExpressionParser.java:285)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatSumExpression(InternalSpelExpressionParser.java:263)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatRelationalExpression(InternalSpelExpressionParser.java:218)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatLogicalAndExpression(InternalSpelExpressionParser.java:205)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatLogicalOrExpression(InternalSpelExpressionParser.java:192)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatExpression(InternalSpelExpressionParser.java:153)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.doParseExpression(InternalSpelExpressionParser.java:131)
+	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:61)
+	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:33)
+	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:52)
+	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:43)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.getExpression(SPELVariableExpressionEvaluator.java:373)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.obtainComputedSpelExpression(SPELVariableExpressionEvaluator.java:321)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:182)
+	... 68 common frames omitted
+
+2022-04-20 19:25:36.629 ERROR 9744 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "/blog/{id}(id=${blog.id})" (template: "search" - line 82, col 53)] with root cause
+
+org.springframework.expression.spel.SpelParseException: Expression [/blog/{id}(id=${blog.id})] @0: EL1070E: Problem parsing left operand
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.internalException(InternalSpelExpressionParser.java:1041)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.checkLeftOperand(InternalSpelExpressionParser.java:1030)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.checkOperands(InternalSpelExpressionParser.java:1024)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatProductExpression(InternalSpelExpressionParser.java:285)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatSumExpression(InternalSpelExpressionParser.java:263)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatRelationalExpression(InternalSpelExpressionParser.java:218)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatLogicalAndExpression(InternalSpelExpressionParser.java:205)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatLogicalOrExpression(InternalSpelExpressionParser.java:192)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.eatExpression(InternalSpelExpressionParser.java:153)
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.doParseExpression(InternalSpelExpressionParser.java:131)
+	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:61)
+	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:33)
+	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:52)
+	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:43)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.getExpression(SPELVariableExpressionEvaluator.java:373)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.obtainComputedSpelExpression(SPELVariableExpressionEvaluator.java:321)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:182)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.expression.LinkExpression.executeLinkExpression(LinkExpression.java:264)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:85)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:367)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:221)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.CloseElementTag.beHandled(CloseElementTag.java:139)
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:661)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:366)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:190)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1401)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1145)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1084)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+2022-04-20 19:26:43.947  INFO 9744 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-20 19:26:43.966  INFO 9744 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-04-20 19:26:48.899  INFO 4084 --- [restartedMain] com.lot.blog.BlogApplication             : Starting BlogApplication using Java 11.0.3 on DESKTOP-H8KV7I2 with PID 4084 (D:\Java文件\java框架\blog\target\classes started by 22709 in D:\Java文件\java框架\blog)
+2022-04-20 19:26:48.900 DEBUG 4084 --- [restartedMain] com.lot.blog.BlogApplication             : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-04-20 19:26:48.901  INFO 4084 --- [restartedMain] com.lot.blog.BlogApplication             : The following profiles are active: dev
+2022-04-20 19:26:49.014  INFO 4084 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-20 19:26:49.015  INFO 4084 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-20 19:26:51.372  INFO 4084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-20 19:26:51.383  INFO 4084 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-20 19:26:51.383  INFO 4084 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-04-20 19:26:51.492  INFO 4084 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-20 19:26:51.492  INFO 4084 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2471 ms
+2022-04-20 19:26:52.502  INFO 4084 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-04-20 19:26:53.259  INFO 4084 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-04-20 19:26:53.324  INFO 4084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-20 19:26:53.350  INFO 4084 --- [restartedMain] com.lot.blog.BlogApplication             : Started BlogApplication in 5.421 seconds (JVM running for 7.015)
+2022-04-20 19:26:54.108  INFO 4084 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-20 19:26:54.109  INFO 4084 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-20 19:26:54.111  INFO 4084 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-04-20 19:26:54.194  INFO 4084 --- [http-nio-8080-exec-1] com.lot.blog.aspect.LogAspect            : Request : {}RequestLog{url='http://localhost:8080/search', ip='0:0:0:0:0:0:0:1', classMethod='com.lot.blog.controller.IndexController,blog', args=[1, 哆啦, {}]}
+2022-04-20 19:26:54.305  INFO 4084 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-04-20 19:26:55.099  INFO 4084 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-04-20 19:26:55.111 DEBUG 4084 --- [http-nio-8080-exec-1] B.getIndexPageBlogByTitleOrContent_COUNT : ==>  Preparing: SELECT count(0) FROM `t_blog` b, `t_type` t, `t_user` u WHERE b.published = true AND b.type_id = t.id AND u.id = b.user_id AND (b.description LIKE ? OR b.title LIKE ? OR b.content LIKE ?)
+2022-04-20 19:26:55.144 DEBUG 4084 --- [http-nio-8080-exec-1] B.getIndexPageBlogByTitleOrContent_COUNT : ==> Parameters: %哆啦%(String), %哆啦%(String), %哆啦%(String)
+2022-04-20 19:26:55.199 DEBUG 4084 --- [http-nio-8080-exec-1] B.getIndexPageBlogByTitleOrContent_COUNT : <==      Total: 1
+2022-04-20 19:26:55.209 DEBUG 4084 --- [http-nio-8080-exec-1] l.b.d.B.getIndexPageBlogByTitleOrContent : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name,u.nickname, u.avatar from `t_blog` b, `t_type` t,`t_user` u where b.published = true and b.type_id = t.id and u.id = b.user_id and (b.description like ? or b.title like ? or b.content like ?) order by b.update_time desc LIMIT ?
+2022-04-20 19:26:55.210 DEBUG 4084 --- [http-nio-8080-exec-1] l.b.d.B.getIndexPageBlogByTitleOrContent : ==> Parameters: %哆啦%(String), %哆啦%(String), %哆啦%(String), 8(Integer)
+2022-04-20 19:26:55.217 DEBUG 4084 --- [http-nio-8080-exec-1] l.b.d.B.getIndexPageBlogByTitleOrContent : <==      Total: 1
+2022-04-20 19:26:55.224  INFO 4084 --- [http-nio-8080-exec-1] com.lot.blog.aspect.LogAspect            : Result : {}search
+2022-04-20 19:27:06.238  INFO 4084 --- [http-nio-8080-exec-3] com.lot.blog.aspect.LogAspect            : Request : {}RequestLog{url='http://localhost:8080/blog/11', ip='0:0:0:0:0:0:0:1', classMethod='com.lot.blog.controller.IndexController,enterBlog', args=[11, {}]}
+2022-04-20 19:27:06.242 DEBUG 4084 --- [http-nio-8080-exec-3] c.lot.blog.dao.BlogDao.getDetailedBlog   : ==>  Preparing: select b.id,b.first_picture,b.flag,b.title,b.content,b.views,b.comment_count,b.update_time,b.commentabled,b.share_statement,b.appreciation, u.nickname,u.avatar,t.name typeName from `t_blog` b,`t_user` u,`t_type` t where b.user_id = u.id and b.type_id = t.id and b.id = ?
+2022-04-20 19:27:06.243 DEBUG 4084 --- [http-nio-8080-exec-3] c.lot.blog.dao.BlogDao.getDetailedBlog   : ==> Parameters: 11(Long)
+2022-04-20 19:27:06.256 DEBUG 4084 --- [http-nio-8080-exec-3] c.lot.blog.dao.BlogDao.getDetailedBlog   : <==      Total: 1
+2022-04-20 19:27:06.309 DEBUG 4084 --- [http-nio-8080-exec-3] com.lot.blog.dao.BlogDao.updateViews     : ==>  Preparing: update `t_blog` set views = views+1 where id = ?
+2022-04-20 19:27:06.309 DEBUG 4084 --- [http-nio-8080-exec-3] com.lot.blog.dao.BlogDao.updateViews     : ==> Parameters: 11(Long)
+2022-04-20 19:27:06.341 DEBUG 4084 --- [http-nio-8080-exec-3] com.lot.blog.dao.BlogDao.updateViews     : <==    Updates: 1
+2022-04-20 19:27:06.342 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.dao.BlogDao.updateCommentCounts    : ==>  Preparing: update `t_blog` t set t.comment_count = (select count(*) from `t_comment` c where c.blog_id = t.id) where t.id = ?
+2022-04-20 19:27:06.342 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.dao.BlogDao.updateCommentCounts    : ==> Parameters: 11(Long)
+2022-04-20 19:27:06.355 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.dao.BlogDao.updateCommentCounts    : <==    Updates: 1
+2022-04-20 19:27:06.356 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.d.C.findByBlogIdParentIdNull       : ==>  Preparing: select * from t_comment c, t_blog b where c.blog_id = b.id and c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2022-04-20 19:27:06.356 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.d.C.findByBlogIdParentIdNull       : ==> Parameters: 11(Long), -1(Long)
+2022-04-20 19:27:06.359 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.d.C.findByBlogIdParentIdNull       : <==      Total: 1
+2022-04-20 19:27:06.360 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.dao.CommentDao.findParentCommend   : ==>  Preparing: select * from `t_comment` c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2022-04-20 19:27:06.361 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.dao.CommentDao.findParentCommend   : ==> Parameters: 11(Long), 12(Long)
+2022-04-20 19:27:06.362 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.dao.CommentDao.findParentCommend   : <==      Total: 1
+2022-04-20 19:27:06.363 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.d.CommentDao.findChildrenCommend   : ==>  Preparing: select * from `t_comment` c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2022-04-20 19:27:06.363 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.d.CommentDao.findChildrenCommend   : ==> Parameters: 11(Long), 13(Long)
+2022-04-20 19:27:06.367 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.d.CommentDao.findChildrenCommend   : <==      Total: 1
+2022-04-20 19:27:06.368 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.d.CommentDao.findChildrenCommend   : ==>  Preparing: select * from `t_comment` c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2022-04-20 19:27:06.368 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.d.CommentDao.findChildrenCommend   : ==> Parameters: 11(Long), 14(Long)
+2022-04-20 19:27:06.371 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.d.CommentDao.findChildrenCommend   : <==      Total: 1
+2022-04-20 19:27:06.371 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.d.CommentDao.findChildrenCommend   : ==>  Preparing: select * from `t_comment` c where c.blog_id = ? and c.parent_comment_id = ? order by c.create_time desc
+2022-04-20 19:27:06.372 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.d.CommentDao.findChildrenCommend   : ==> Parameters: 11(Long), 15(Long)
+2022-04-20 19:27:06.373 DEBUG 4084 --- [http-nio-8080-exec-3] c.l.b.d.CommentDao.findChildrenCommend   : <==      Total: 0
+2022-04-20 19:27:06.374  INFO 4084 --- [http-nio-8080-exec-3] com.lot.blog.aspect.LogAspect            : Result : {}blog
+2022-04-20 19:27:11.806  INFO 4084 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-04-20 19:27:11.824  INFO 4084 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

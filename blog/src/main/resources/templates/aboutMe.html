@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>关于我</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+</head>
+
+<body>
+<!--导航-->
+<nav th:replace="_fragments :: menu(5)" class="ui inverted attached segment padded-mini m-shadow-small">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu ">
+            <h2 class="ui teal header padded-mini">Lotsehsin</h2>
+            <a class="item m-label me-mobile-hide" href="#"><i class=" home icon"></i>首页</a>
+            <a class="item m-label me-mobile-hide" href="#"><i class=" tags icon"></i>标签</a>
+            <a class="item m-label me-mobile-hide" href="#"><i class=" bookmark outline icon"></i>分类</a>
+            <a class="item m-label me-mobile-hide" href="#"><i class=" clone icon"></i>归档</a>
+            <a class="active item m-label me-mobile-hide" href="#"><i class=" user icon"></i>关于我</a>
+            <div class="right m-label item me-mobile-hide">
+                <div class="ui icon inverted transparent input">
+                    <input type="text" placeholder="Search...">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon me-button-position button me-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<!--中间部分-->
+<div class="padded-large animated slideInLeft">
+    <div class="ui container">
+       <div class="ui stackable grid">
+           <div class="nine wide column">
+               <div class="ui segment">
+                   <img src="../static/img/me.jpg" th:src="@{/img/me.jpg}" alt="" class="ui fluid rounded image" style="width: 600px;height: 600px">
+               </div>
+           </div>
+           <div class="seven wide column">
+                   <div class="ui top attached segment">
+                       <div class="ui header text">关于我</div>
+                   </div>
+                   <div class="ui attached segment">
+                        <p>lotsehsin,一名热爱编程的大叔，一个独立开发者，一个终身学习者，希望结识热爱编程、志同道合的朋友</p>
+                       <p>喜欢折腾、探索高效学习编程的方法</p>
+                   </div>
+                   <div class="ui attached segment">
+                       <div class="ui  basic left pointing orange label padded-mini">编程</div>
+                       <div class="ui  basic left pointing teal label padded-mini">生活</div>
+                       <div class="ui  basic left pointing red label padded-mini">读书</div>
+                       <div class="ui  basic left pointing blue label padded-mini">运动</div>
+                   </div>
+                   <div class="ui attached segment">
+                       <div class="ui  basic orange label padded-mini me-margin-lr-small">Java</div>
+                       <div class="ui  basic black label padded-mini me-margin-lr-small">javaScript</div>
+                       <div class="ui  basic purple label padded-mini me-margin-lr-small">c++</div>
+                       <div class="ui  basic yellow label padded-mini me-margin-lr-small">MySql</div>
+                       <div class="ui  basic green label padded-mini me-margin-lr-small">Spring</div>
+                       <div class="ui  basic green label padded-mini me-margin-lr-small">Python</div>
+                   </div>
+                   <div class="ui bottom attached segment">
+                       <a href="https://github.com/TheLotsehsin/LosProgramme" target="_blank" class="ui circular icon  button pad"><i class="github icon"></i></a>
+                       <a href="#" class="ui circular icon  button qq"><i class="qq icon"></i></a>
+                       <a href="#" class="ui wechat circular icon  button"><i class="wechat icon"></i></a>
+                   </div>
+                    <div class="ui qq-QR flowing popup transition hidden">
+                        <img src="../static/img/qq.png" th:src="@{/img/qq.png}" alt="" class="ui rounded image" style="width: 200px!important;">
+                    </div>
+                   <div class="ui wechat-QR flowing popup transition hidden">
+                       <img src="../static/img/callingCard.png" th:src="@{/img/callingCard.png}" alt="" class="ui rounded image" style="width: 200px">
+                   </div>
+           </div>
+
+
+       </div>
+    </div>
+</div>
+
+<!--Aplayer-->
+<div th:replace="_fragments :: aplayer"></div>
+
+<!--footer-->
+<div th:replace="_fragments :: footer" class="ui inverted vertical segment padded-massive">
+    <div class="ui center aligned  container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <img src="../static/img/callingCard.png" class="ui rounded image" style="width: 100px" >
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header text">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">wwwww</a>
+                    <a href="#" class="item">wwwww</a>
+                    <a href="#" class="item">wwwww</a>
+                </div>
+            </div>
+            <div class="three wide column ">
+                <h4 class="ui inverted header text">最新博客</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">wwwww</a>
+                    <a href="#" class="item">wwwww</a>
+                    <a href="#" class="item">wwwww</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header text">lotsehsin</h4>
+                <p class="text">www,mm,mmkcmskdmak</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider me-opacity-thiny">
+            <p>@</p>
+        </div>
+    </div>
+</div>
+
+<th:block th:replace = "_fragments :: script">
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</th:block>
+<!--鼠标事件-->
+<script>
+    var a_idx = 0;
+    jQuery(document).ready(function($) {
+        $("body").click(function(e) {
+            var a = new Array("富强", "民主", "文明", "和谐", "自由", "平等", "公正" ,"法治", "爱国", "敬业", "诚信", "友善");
+            var $i = $("<span/>").text(a[a_idx]);
+            a_idx = (a_idx + 1) % a.length;
+            var x = e.pageX,
+                y = e.pageY;
+            $i.css({
+                "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+                "top": y - 20,
+                "left": x,
+                "position": "absolute",
+                "font-weight": "bold",
+                "color": "#ff6651"
+            });
+            $("body").append($i);
+            $i.animate({
+                    "top": y - 180,
+                    "opacity": 0
+                },
+                1500,
+                function() {
+                    $i.remove();
+                });
+        });
+    });
+
+</script>
+<!--天气-->
+<script>
+    (function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.seniverse.com/widget/chameleon.js"))
+</script>
+<script>
+    tpwidget("init", {
+        "flavor": "slim",
+        "location": "WX4FBXXFKE4F",
+        "geolocation": "enabled",
+        "language": "zh-chs",
+        "unit": "c",
+        "theme": "chameleon",
+        "container": "tp-weather-widget",
+        "bubble": "enabled",
+        "alarmType": "badge",
+        "color":"#74fcff",
+        "uid": "UC6AD9E048",
+        "hash": "76465b415261736ddd08da3f7f9b24d0"
+    });
+    tpwidget("show");
+</script>
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-label').toggleClass('me-mobile-hide');
+    });
+    $('.wechat').popup({
+        popup : $('.wechat-QR'),
+        on : 'click',
+        position : 'bottom center'
+    });
+    $('.qq').popup({
+       popup : $('.qq-QR'),
+       on : 'click',
+       position : 'bottom center'
+    });
+
+
+    // 运行时间统计
+    function secondToDate(second) {
+        if (!second) {
+            return 0;
+        }
+        var time = new Array(0, 0, 0, 0, 0);
+        if (second >= 365 * 24 * 3600) {
+            time[0] = parseInt(second / (365 * 24 * 3600));
+            second %= 365 * 24 * 3600;
+        }
+        if (second >= 24 * 3600) {
+            time[1] = parseInt(second / (24 * 3600));
+            second %= 24 * 3600;
+        }
+        if (second >= 3600) {
+            time[2] = parseInt(second / 3600);
+            second %= 3600;
+        }
+        if (second >= 60) {
+            time[3] = parseInt(second / 60);
+            second %= 60;
+        }
+        if (second > 0) {
+            time[4] = second;
+        }
+        return time;
+    }
+    function setTime() {
+        /*此处为网站的创建时间*/
+        var create_time = Math.round(new Date(Date.UTC(2022, 3, 10, 15, 15, 15)).getTime() / 1000);
+        var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+        currentTime = secondToDate((timestamp - create_time));
+        currentTimeHtml = currentTime[0] + '年' + currentTime[1] + '天'
+            + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4]
+            + '秒';
+        document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+    }
+    setInterval(setTime, 1000);
+
+</script>
+</body>
+</html>

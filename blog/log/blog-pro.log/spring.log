@@ -1,0 +1,39 @@
+2022-04-28 16:14:41.472  INFO 12120 --- [restartedMain] com.lot.blog.BlogApplication             : Starting BlogApplication using Java 11.0.3 on DESKTOP-H8KV7I2 with PID 12120 (D:\Javaæ–‡ä»¶\javaæ¡†æž¶\blog\target\classes started by 22709 in D:\Javaæ–‡ä»¶\javaæ¡†æž¶\blog)
+2022-04-28 16:14:41.476  INFO 12120 --- [restartedMain] com.lot.blog.BlogApplication             : The following profiles are active: pro
+2022-04-28 16:14:43.832  INFO 12120 --- [restartedMain] com.lot.blog.BlogApplication             : Started BlogApplication in 2.912 seconds (JVM running for 3.966)
+2022-04-28 16:56:17.541  INFO 11184 --- [main] com.lot.blog.BlogApplicationTests        : Starting BlogApplicationTests using Java 11.0.3 on DESKTOP-H8KV7I2 with PID 11184 (started by 22709 in D:\JavaÎÄ¼þ\java¿ò¼Ü\blog)
+2022-04-28 16:56:17.549  INFO 11184 --- [main] com.lot.blog.BlogApplicationTests        : The following profiles are active: pro
+2022-04-28 16:56:17.831  INFO 14792 --- [main] com.lot.blog.BlogApplicationTests        : Starting BlogApplicationTests using Java 11.0.3 on DESKTOP-H8KV7I2 with PID 14792 (started by 22709 in D:\JavaÎÄ¼þ\java¿ò¼Ü\blog)
+2022-04-28 16:56:17.835  INFO 14792 --- [main] com.lot.blog.BlogApplicationTests        : The following profiles are active: pro
+2022-04-28 16:56:23.753  INFO 11184 --- [main] com.lot.blog.BlogApplicationTests        : Started BlogApplicationTests in 7.214 seconds (JVM running for 8.432)
+2022-04-28 16:56:24.469  INFO 14792 --- [main] com.lot.blog.BlogApplicationTests        : Started BlogApplicationTests in 7.657 seconds (JVM running for 8.933)
+2022-04-28 16:56:34.944  INFO 6748 --- [main] com.lot.blog.BlogApplicationTests        : Starting BlogApplicationTests using Java 11.0.3 on DESKTOP-H8KV7I2 with PID 6748 (started by 22709 in D:\JavaÎÄ¼þ\java¿ò¼Ü\blog)
+2022-04-28 16:56:34.946  INFO 6748 --- [main] com.lot.blog.BlogApplicationTests        : The following profiles are active: pro
+2022-04-28 16:56:37.849  INFO 6748 --- [main] com.lot.blog.BlogApplicationTests        : Started BlogApplicationTests in 3.355 seconds (JVM running for 4.169)
+2022-04-28 16:59:33.207  INFO 7884 --- [main] com.lot.blog.BlogApplicationTests        : Starting BlogApplicationTests using Java 11.0.3 on DESKTOP-H8KV7I2 with PID 7884 (started by 22709 in D:\JavaÎÄ¼þ\java¿ò¼Ü\blog)
+2022-04-28 16:59:33.210  INFO 7884 --- [main] com.lot.blog.BlogApplicationTests        : The following profiles are active: pro
+2022-04-28 16:59:33.760  INFO 5088 --- [main] com.lot.blog.BlogApplicationTests        : Starting BlogApplicationTests using Java 11.0.3 on DESKTOP-H8KV7I2 with PID 5088 (started by 22709 in D:\JavaÎÄ¼þ\java¿ò¼Ü\blog)
+2022-04-28 16:59:33.762  INFO 5088 --- [main] com.lot.blog.BlogApplicationTests        : The following profiles are active: pro
+2022-04-28 16:59:39.598  INFO 7884 --- [main] com.lot.blog.BlogApplicationTests        : Started BlogApplicationTests in 7.243 seconds (JVM running for 8.352)
+2022-04-28 16:59:40.938  INFO 5088 --- [main] com.lot.blog.BlogApplicationTests        : Started BlogApplicationTests in 8.221 seconds (JVM running for 9.432)
+2022-04-28 17:17:14.602  INFO 10168 --- [main] com.lot.blog.BlogApplicationTests        : Starting BlogApplicationTests using Java 11.0.3 on DESKTOP-H8KV7I2 with PID 10168 (started by 22709 in D:\JavaÎÄ¼þ\java¿ò¼Ü\blog)
+2022-04-28 17:17:14.603  INFO 10168 --- [main] com.lot.blog.BlogApplicationTests        : The following profiles are active: pro
+2022-04-28 17:17:17.562  INFO 10168 --- [main] com.lot.blog.BlogApplicationTests        : Started BlogApplicationTests in 3.41 seconds (JVM running for 4.198)
+2022-04-28 17:31:35.162  INFO 12260 --- [restartedMain] com.lot.blog.BlogApplication             : Starting BlogApplication using Java 11.0.3 on DESKTOP-H8KV7I2 with PID 12260 (D:\Javaæ–‡ä»¶\javaæ¡†æž¶\blog\target\classes started by 22709 in D:\Javaæ–‡ä»¶\javaæ¡†æž¶\blog)
+2022-04-28 17:31:35.165  INFO 12260 --- [restartedMain] com.lot.blog.BlogApplication             : The following profiles are active: pro
+2022-04-28 17:31:37.064  INFO 12260 --- [restartedMain] com.lot.blog.BlogApplication             : Started BlogApplication in 2.338 seconds (JVM running for 3.178)
+2022-04-28 17:31:50.929  INFO 17024 --- [restartedMain] com.lot.blog.BlogApplication             : Starting BlogApplication using Java 11.0.3 on DESKTOP-H8KV7I2 with PID 17024 (D:\Javaæ–‡ä»¶\javaæ¡†æž¶\blog\target\classes started by 22709 in D:\Javaæ–‡ä»¶\javaæ¡†æž¶\blog)
+2022-04-28 17:31:50.931  INFO 17024 --- [restartedMain] com.lot.blog.BlogApplication             : The following profiles are active: pro
+2022-04-28 17:31:52.842  INFO 17024 --- [restartedMain] com.lot.blog.BlogApplication             : Started BlogApplication in 2.364 seconds (JVM running for 3.325)
+2022-04-28 17:32:04.269  INFO 17024 --- [http-nio-8081-exec-1] com.lot.blog.aspect.LogAspect            : Request : {}RequestLog{url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.lot.blog.controller.IndexController,index', args=[1, {}]}
+2022-04-28 17:32:04.872  INFO 17024 --- [http-nio-8081-exec-1] com.lot.blog.aspect.LogAspect            : Result : {}index
+2022-04-28 17:32:08.064  INFO 17024 --- [http-nio-8081-exec-10] com.lot.blog.aspect.LogAspect            : Request : {}RequestLog{url='http://localhost:8081/blog/13', ip='0:0:0:0:0:0:0:1', classMethod='com.lot.blog.controller.IndexController,enterBlog', args=[13, {}]}
+2022-04-28 17:32:08.245  INFO 17024 --- [http-nio-8081-exec-10] com.lot.blog.aspect.LogAspect            : Result : {}blog
+2022-04-28 17:32:15.376  INFO 17024 --- [http-nio-8081-exec-3] com.lot.blog.aspect.LogAspect            : Request : {}RequestLog{url='http://localhost:8081/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.lot.blog.controller.TagShowController,showTags', args=[-1, {}, 1]}
+2022-04-28 17:32:15.451  INFO 17024 --- [http-nio-8081-exec-3] com.lot.blog.aspect.LogAspect            : Result : {}tags
+2022-04-28 17:32:16.825  INFO 17024 --- [http-nio-8081-exec-7] com.lot.blog.aspect.LogAspect            : Request : {}RequestLog{url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.lot.blog.controller.TypeShowController,showTypes', args=[-1, {}, 1]}
+2022-04-28 17:32:16.923  INFO 17024 --- [http-nio-8081-exec-7] com.lot.blog.aspect.LogAspect            : Result : {}types
+2022-04-28 17:32:28.259  WARN 17024 --- [http-nio-8081-exec-5] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [274] milliseconds.
+2022-04-28 23:11:50.146  INFO 12184 --- [main] com.lot.blog.BlogApplicationTests        : Starting BlogApplicationTests using Java 11.0.3 on DESKTOP-H8KV7I2 with PID 12184 (started by 22709 in D:\JavaÎÄ¼þ\java¿ò¼Ü\blog)
+2022-04-28 23:11:50.148  INFO 12184 --- [main] com.lot.blog.BlogApplicationTests        : The following profiles are active: pro
+2022-04-28 23:11:54.551  INFO 12184 --- [main] com.lot.blog.BlogApplicationTests        : Started BlogApplicationTests in 5.142 seconds (JVM running for 6.83)

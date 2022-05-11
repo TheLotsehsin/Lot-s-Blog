@@ -1,0 +1,9 @@
+2022-04-20 19:28:02.730  INFO 9436 --- [main] com.lot.blog.BlogApplicationTests        : Starting BlogApplicationTests using Java 11.0.3 on DESKTOP-H8KV7I2 with PID 9436 (started by 22709 in D:\Java文件\java框架\blog)
+2022-04-20 19:28:02.743  INFO 9436 --- [main] com.lot.blog.BlogApplicationTests        : The following profiles are active: pro
+2022-04-20 19:28:10.097  INFO 9436 --- [main] com.lot.blog.BlogApplicationTests        : Started BlogApplicationTests in 8.664 seconds (JVM running for 11.252)
+2022-04-20 19:28:28.826  INFO 21428 --- [main] com.lot.blog.BlogApplicationTests        : Starting BlogApplicationTests using Java 11.0.3 on DESKTOP-H8KV7I2 with PID 21428 (started by 22709 in D:\Java文件\java框架\blog)
+2022-04-20 19:28:28.831  INFO 21428 --- [main] com.lot.blog.BlogApplicationTests        : The following profiles are active: pro
+2022-04-20 19:28:33.118  INFO 21428 --- [main] com.lot.blog.BlogApplicationTests        : Started BlogApplicationTests in 5.057 seconds (JVM running for 6.405)
+2022-04-20 19:29:28.358  INFO 13624 --- [main] com.lot.blog.BlogApplicationTests        : Starting BlogApplicationTests using Java 11.0.3 on DESKTOP-H8KV7I2 with PID 13624 (started by 22709 in D:\Java文件\java框架\blog)
+2022-04-20 19:29:28.360  INFO 13624 --- [main] com.lot.blog.BlogApplicationTests        : The following profiles are active: pro
+2022-04-20 19:29:34.169  INFO 13624 --- [main] com.lot.blog.BlogApplicationTests        : Started BlogApplicationTests in 6.599 seconds (JVM running for 7.904)

@@ -1,0 +1,12 @@
+spring:
+  thymeleaf:
+    cache: true
+    mode: HTML
+    prefix: classpath:/templates/
+  profiles:
+    active: pro
+  main:
+    allow-circular-references: true
+
+
+comment.avatar: /img/me.jpg

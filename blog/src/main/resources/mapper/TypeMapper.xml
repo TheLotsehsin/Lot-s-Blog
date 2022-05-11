@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lot.blog.dao.TypeDao">
+
+    <resultMap id="types" type="com.lot.blog.entity.Type">
+        <id property="id" column="tid"></id>
+        <result property="name" column="name"></result>
+        <collection property="blog" ofType="Blog">
+            <id property="id" column="bid"></id>
+            <result property="title" column="title"></result>
+        </collection>
+    </resultMap>
+
+    <select id="getIndexType" resultMap="types">
+        select t.id tid,t.name,b.id bid ,b.title from `t_type`t,`t_blog` b where b.published = true and t.id = b.type_id order by t.id desc limit 4
+    </select>
+
+    <select id="getIndexType1" resultMap="types">
+        select t.id tid,t.name,b.id bid ,b.title from `t_type`t,`t_blog` b where b.published = true and  t.id = b.type_id
+    </select>
+
+
+    <insert id="saveType" parameterType="Type">
+        insert into `t_type`(id,name) values(#{id},#{name})
+    </insert>
+
+    <select id="getTypeByName" resultType="Type">
+        select * from `t_type` where  name = #{name}
+    </select>
+
+    <select id="getType" resultType="Type">
+        select * from `t_type` where  id=#{id}
+    </select>
+
+    <select id="getAllType" resultType="Type">
+        select * from `t_type`
+    </select>
+
+    <update id="updateType" parameterType="Type">
+       update `t_type` set name=#{name} where id=#{id}
+    </update>
+
+    <delete id="deleteType">
+        delete from `t_type` where id=#{id}
+    </delete>
+
+</mapper>
